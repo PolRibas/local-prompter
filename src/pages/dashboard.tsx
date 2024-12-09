@@ -25,6 +25,7 @@ const Dashboard: React.FC = () => {
         setConversations(convs);
       } catch (err) {
         setError('Error al cargar las conversaciones');
+        console.error(err)
       }
     };
 
@@ -46,6 +47,7 @@ const Dashboard: React.FC = () => {
       setPrompt('');
     } catch (err) {
       setError('Error al crear la conversación');
+      console.error(err);
     } finally {
       setLoading(false);
     }

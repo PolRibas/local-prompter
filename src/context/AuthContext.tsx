@@ -68,7 +68,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             // Hacer una solicitud POST al endpoint de login (mockeado)
             const response = await axios.post('/api/login', { email, password });
 
-            const { token, user } = response.data;
+            const { token } = response.data;
 
             // Guardar el token en localStorage
             localStorage.setItem('token', token);
