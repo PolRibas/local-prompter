@@ -1,7 +1,7 @@
 // src/services/api.ts
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000/api/';  // Asegúrate de que esta URL coincide con tu backend
+const API_URL = '/back/';  // Asegúrate de que esta URL coincide con tu backend
 
 const api = axios.create({
   baseURL: API_URL,
