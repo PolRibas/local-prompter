@@ -1,21 +1,19 @@
+/* src/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Variables CSS */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb; /* Color de fondo */
+  --foreground: #1f2937; /* Color de texto principal */
+  --font-montserrat: 'Montserrat', sans-serif; /* Fuente personalizada */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Aplicar las variables */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground font-sans;
 }
+
+/* Estilos Personalizados (Opcional) */
+/* Puedes agregar estilos personalizados aquí si lo deseas */
