@@ -14,6 +14,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: {
           white: "#ffffff",
+          black: "#000000",
         },
       },
       fontFamily: {

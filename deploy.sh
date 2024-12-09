@@ -24,7 +24,11 @@ echo "========================================="
 cd $APP_DIR || { echo "Directorio de la aplicación no encontrado!"; exit 1; }
 
 # Guardar cambios locales (opcional)
-git stash
+git add .
+
+git commit -m "Deploy $(date)" || { echo "Error al ejecutar git commit!"; exit 1; }
+
+git push origin $BRANCH || { echo "Error al ejecutar git push!"; exit 1; }
 
 # Obtener los últimos cambios
 echo "Obteniendo los últimos cambios de la rama $BRANCH..."
