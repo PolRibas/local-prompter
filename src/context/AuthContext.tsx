@@ -87,8 +87,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             setIsAuthenticated(true);
 
             return true;
-        } catch (error: any) {
-            console.error('Error en login:', error.response?.data?.message || error.message);
+        } catch (error: unknown) {
+            console.error('Error en login:', error);
             return false;
         }
     };
