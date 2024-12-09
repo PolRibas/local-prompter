@@ -72,7 +72,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const login = async (username: string, password: string): Promise<boolean> => {
     try {
       const response = await api.post('token/', { username, password });
-      const { access, refresh } = response.data;
+      const { access } = response.data;
       localStorage.setItem('token', access);
       await fetchProfile();
       return true;
@@ -93,7 +93,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       // Usa las credenciales del usuario invitado
       const response = await api.post('token/', { username: 'guest', password: 'myguestpassword' });
-      const { access, refresh } = response.data;
+      const { access } = response.data;
       localStorage.setItem('token', access);
       await fetchProfile();
       return true;
