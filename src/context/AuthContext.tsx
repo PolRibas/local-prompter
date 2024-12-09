@@ -76,8 +76,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('token', access);
       await fetchProfile();
       return true;
-    } catch (error: any) {
-      console.error('Error en login:', error.response?.data?.detail || error.message);
+    } catch (error: unknown) {
+      console.error('Error en login:', error);
       return false;
     }
   };
@@ -97,8 +97,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('token', access);
       await fetchProfile();
       return true;
-    } catch (error: any) {
-      console.error('Error en login de invitado:', error.response?.data?.detail || error.message);
+    } catch (error: unknown) {
+      console.error('Error en login de invitado:', error);
       return false;
     }
   };

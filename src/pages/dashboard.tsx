@@ -32,6 +32,7 @@ const Dashboard: React.FC = () => {
         const convs = await fetchConversations();
         setConversations(convs);
       } catch (err) {
+        console.error('Error al cargar las conversaciones:', err);
         setError('Error al cargar las conversaciones');
       }
     };
@@ -41,6 +42,7 @@ const Dashboard: React.FC = () => {
         const models = await fetchAIModes();
         setAIModes(models);
       } catch (err) {
+        console.error('Error al cargar los modelos de IA:', err);
         setError('Error al cargar los modelos de IA');
       }
     };
@@ -63,6 +65,7 @@ const Dashboard: React.FC = () => {
       setConversations([newConv, ...conversations]);
       setPrompt('');
     } catch (err) {
+      console.error('Error al crear la conversación:', err);
       setError('Error al crear la conversación');
     } finally {
       setLoading(false);
