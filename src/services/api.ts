@@ -1,7 +1,7 @@
 // src/services/api.ts
 import axios from 'axios';
 
-const API_URL = 'http://www.grizzly.local/back/api/';
+const API_URL = '/back/api/';
 
 const api = axios.create({
   baseURL: API_URL,
