@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { MdHome, MdSmartToy, MdChat, MdFolder, MdPeople, MdSettings, MdPerson } from 'react-icons/md';
+import { MdHome, MdSmartToy, MdChat, MdFolder, MdPeople, MdSettings } from 'react-icons/md';
 
 interface DashboardRoute {
   name: string;
