@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '@/context/AuthContext';
 import api from '@/services/api';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 interface UserProfile {
   id: number;
@@ -15,6 +16,8 @@ const SettingsPage: React.FC = () => {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+
+  const router = useRouter();
 
   const fetchProfile = async () => {
     try {
@@ -36,6 +39,7 @@ const SettingsPage: React.FC = () => {
 
   const handleLogout = () => {
     logout();
+    router.push('/login');
   };
 
   return (
