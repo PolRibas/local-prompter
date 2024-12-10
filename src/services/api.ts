@@ -1,7 +1,8 @@
-// src/services/api.ts
 import axios from 'axios';
 
-const API_URL = '/back/api/';
+const prefix = "http://grizzly.local"
+const API_URL = prefix + '/back/api/';
+// const API_URL = '/back/api/';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -10,7 +11,6 @@ const api = axios.create({
   },
 });
 
-// Añadir un interceptor para incluir el token en las solicitudes
 api.interceptors.request.use((config) => {
   const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   if (token && config.headers) {

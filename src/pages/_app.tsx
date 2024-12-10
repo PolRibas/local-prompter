@@ -3,6 +3,8 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { AuthProvider } from '../context/AuthContext';
 import { Montserrat } from 'next/font/google';
+import { useRouter } from 'next/router';
+import { DashboardLayout } from '@/components';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -11,10 +13,18 @@ const montserrat = Montserrat({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isDashboard = router.pathname.startsWith('/dashboard');
   return (
     <AuthProvider>
       <div className={montserrat.variable}>
-        <Component {...pageProps} />
+        {isDashboard ? (
+          <DashboardLayout>
+            <Component {...pageProps} />
+          </DashboardLayout>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </div>
     </AuthProvider>
   );

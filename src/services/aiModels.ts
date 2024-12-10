@@ -1,4 +1,3 @@
-// src/services/aiModels.ts
 import api from './api';
 
 export const fetchAIModes = async () => {

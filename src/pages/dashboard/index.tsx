@@ -1,9 +1,9 @@
 // src/pages/dashboard.tsx
 import { useEffect, useState, useContext, FormEvent } from 'react';
-import withAuth from '../hoc/withAuth';
-import { AuthContext } from '../context/AuthContext';
-import { fetchConversations, createConversation } from '../services/conversationService';
-import { fetchAIModes } from '../services/aiModels';
+import withAuth from '@/hoc/withAuth';
+import { AuthContext } from '@/context/AuthContext';
+import { fetchConversations, createConversation } from '@/services/conversationService';
+import { fetchAIModes } from '@/services/aiModels';
 
 interface AIModel {
     id: string;
@@ -73,8 +73,8 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-4xl mx-auto bg-white rounded shadow-md p-6">
+    <div className="bg-background p-8">
+      <div>
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
           <button
