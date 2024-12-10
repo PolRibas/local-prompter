@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const prefix = "http://grizzly.local"
-const API_URL = prefix + '/back/api/';
-// const API_URL = '/back/api/';
+// const prefix = "http://grizzly.local"
+// const API_URL = prefix + '/back/api/';
+const API_URL = '/back/api/';
 
 const api = axios.create({
   baseURL: API_URL,
