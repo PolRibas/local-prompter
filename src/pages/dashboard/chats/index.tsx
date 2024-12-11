@@ -43,7 +43,10 @@ const ChatsPage: React.FC = () => {
       const response = await api.get('conversations/');
       // Asumiendo que response.data es un array de {prompt, response}, convertirlos a mensajes
       const convMessages: Message[] = [];
-      response.data.forEach((c: any) => {
+      response.data.forEach((c: {
+        prompt: string;
+        response: string;
+      }) => {
         convMessages.push({ role: 'user', type: 'text', content: c.prompt });
         convMessages.push({ role: 'assistant', type: 'text', content: c.response });
       });
