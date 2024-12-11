@@ -35,7 +35,7 @@ const ModelDetailPage: React.FC = () => {
 
   useEffect(() => {
     fetchModel();
-  }, [code, fetchModel]);
+  }, [code]);
 
   return (
     <motion.div
