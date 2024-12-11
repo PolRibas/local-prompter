@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { AuthContext } from '@/context/AuthContext';
 import React from 'react';
 
-const withAuth = (WrappedComponent: React.ComponentType) => {
+export const withAuth = (WrappedComponent: React.ComponentType) => {
   const ComponentWithAuth: React.FC = (props) => {
     const { isAuthenticated } = useContext(AuthContext);
     const router = useRouter();
@@ -29,4 +29,3 @@ const withAuth = (WrappedComponent: React.ComponentType) => {
   return ComponentWithAuth;
 };
 
-export default withAuth;

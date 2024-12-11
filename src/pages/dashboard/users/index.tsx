@@ -2,6 +2,7 @@ import { useContext, useEffect, useState, FormEvent } from 'react';
 import { AuthContext } from '@/context/AuthContext';
 import api from '@/services/api';
 import { motion } from 'framer-motion';
+import { withAuth } from '@/hoc/withAuth';
 
 interface User {
   id: number;
@@ -129,4 +130,4 @@ const UsersPage: React.FC = () => {
   );
 };
 
-export default UsersPage;
+export default withAuth(UsersPage);

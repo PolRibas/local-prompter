@@ -4,6 +4,7 @@ import { AuthContext } from '@/context/AuthContext';
 import api from '@/services/api';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { withAuth } from '@/hoc/withAuth';
 
 interface UserProfile {
   id: number;
@@ -116,4 +117,4 @@ const SettingsPage: React.FC = () => {
   );
 };
 
-export default SettingsPage;
+export default withAuth(SettingsPage);

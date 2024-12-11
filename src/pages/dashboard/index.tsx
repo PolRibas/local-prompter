@@ -1,14 +1,14 @@
 // src/pages/dashboard.tsx
 import { useEffect, useState, useContext, FormEvent } from 'react';
-import withAuth from '@/hoc/withAuth';
+import { withAuth } from '@/hoc/withAuth';
 import { AuthContext } from '@/context/AuthContext';
 import { fetchConversations, createConversation } from '@/services/conversationService';
 import { fetchAIModes } from '@/services/aiModels';
 
 interface AIModel {
-    id: string;
-    name: string;
-    description: string;
+  id: string;
+  name: string;
+  description: string;
 }
 
 interface Conversation {
@@ -85,7 +85,7 @@ const Dashboard: React.FC = () => {
           </button>
         </div>
         <p className="text-xl text-foreground mb-4">Bienvenido, {user?.email}</p>
-        
+
         {/* Sección para Enviar Prompt */}
         <form onSubmit={handleSubmit} className="mb-6">
           <label htmlFor="prompt" className="block mb-2 text-foreground">
